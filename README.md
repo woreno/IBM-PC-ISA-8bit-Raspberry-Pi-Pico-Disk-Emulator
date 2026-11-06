@@ -45,9 +45,9 @@ Software side - Raspberry Pi Pico - Core 1 - User interface
 Software side - 8086 PC Option ROM aspects:
   * The 8086 PC BIOS scans the upper memory addresses for option ROMs. These ROMs must include at their first bytes 0xAA55 (2 bytes), the total of 512-bytes blocks(1 byte) and all their bytes shall have a 8-bit sum equal to zero.
   
-Software side - 8086 Boot ROM:
-  * This part in written in ASM and compiled in Turbo Assembler in a DOSBOX enviroment. 
-  After the 8086 code is compiled and linked with TASM, an utility strips the MZ-header, sums all bytes and writes the remain to 0, and place this remain in a reserved place. After the utility converts the code to an C hexadecimal array, and this one is included into Raspberry Pi Pico C++ program. This array is served as the beggining of 0xC8000: boot code, INT13h, INT19h handlers, a buffer reserved for transfering data used by INT13h, and a shared-flag-area, along the DBTs (disk base table) BIOS structures used by INT13h, function 8 (get params), and that need to be dinamically changed accordantly the floppy disk image size (ie, 720KB or 1440KB).
+Software side - 8086 PC Option ROM:
+  * The ROM in written in ASM and compiled in Turbo Assembler in a DOSBOX enviroment. 
+  After the 8086 code is compiled and linked with TASM, a utility strips the MZ-header, sums all bytes and writes the remain to 0, and place this remain in a reserved place. After, the utility converts the code to an C hexadecimal array, and this one is included into Raspberry Pi Pico C++ program. This array is served as the beggining of 0xC8000: boot code, INT13h, INT19h handlers, a buffer reserved for transfering data used by INT13h, a shared-flag-area, and the DBTs (disk base table). The DBTs are BIOS structures used by INT13h, function 8 (get params) and need to be dinamically changed accordantly the floppy disk image selected (ie, 720KB or 1440KB).
   
 
 
