@@ -11,16 +11,17 @@ Project Description:
    The advantage of replacing INT13h or jumping to the factory INT13h, is that is possible to enable the use of the physical drive or using a floppy disk image on demand. However, only ancients Operating Systems uses INT13h directly, so everything that is Windows-386 enhanced mode and beyond - that uses drivers for talking directly with floppy drives and harddisk via IO ports - doesn't belong to this project. 
 
 Electronics side:
-  * Uses 2 74LS244 for multiplexing the address lines A0:A11 to the Raspberry Pi Pico.
+  * Uses 2 74LS244 for multiplexing the address lines A0:A11 to the Raspberry Pi Pico
   * Uses 1 74HC244 for multiplexing the SDCard and TFT lines. The code calls turn_SD() and turnDisplay()
-    to activate these lines before placing calls.
-  * Uses one GAL Atmel ATF16v8B for decoding the address 0xC8000 using the A15:A19 lines, along the
+    to activate these lines before placing calls
+  * Uses 1 GAL Atmel ATF16v8B for decoding the address 0xC8000 using the A15:A19 lines, along the
     memory read and memory write signals (/MEMR, /MEMW)
-  * It pulls down the signal IOREADY using a 2N3904 transistor to it can finish the requests.
+  * It pulls down the signal IOREADY using a 2N3904 transistor to it can finish the requests
   * Uses a 2-axis joystick which swings 2 lines between -5V to 5V according to the side (left/right, up/down); these
     lines are connected to 2 ADC channels on the Raspberry Pi Pico
-  * Uses a 74HCT04 for inverting ENABLE_SD and /ENABLE_LOW_ADDR for multiplexing lines, using the 244 buffers.
-  * Uses some voltage dividers with resistors for 5V to 3.3V level conversion at the Raspberry Pi Pico, as well a bidirectional converter TXS0108E for the databus to level databus signals from 3.3V to 5V, operated with a Output Enable Signal to block them from the main 8086 PC databus.
+  * Uses 1 74HCT04 for inverting ENABLE_SD and /ENABLE_LOW_ADDR for multiplexing lines, using the 244 buffers.
+  * Uses some voltage dividers with resistors for 5V to 3.3V level conversion at the Raspberry Pi Pico
+  * Uses a bidirectional bus converter TXS0108E, for the databus to level databus signals from/to 3.3V to 5V, operated with a Output Enable Signal to block them from the main 8086 PC databus
 
 Software side - Raspberry Pi Pico - Core 0:
   * This CPU is on loop waiting for data from one master PIO program (master_pio). This master_pio is waiting for memr_pio or memw_pio PIO programs for producing and IRQ0.  
