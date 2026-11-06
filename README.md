@@ -4,6 +4,8 @@ A Raspberrry Pi Pico floppy disk and harddisk emulator for older computers/opera
 Included: 
   - Kicad ISA-8bit schematic
   - C and ASM code
+  - Amstrad PPC512/640 rear expansion ports diagram (for doing a "box" for this computer, instead of a ISA-slot card)
+  - Memory addressing and connection simple diagrams
   - building scripts (windows only)
 
 Project Description:
