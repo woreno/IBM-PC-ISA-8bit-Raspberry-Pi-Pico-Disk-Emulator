@@ -1,5 +1,5 @@
 # ISA-raspberry-pi-pico-disk-emulator
-A Raspberrry Pi Pico floppy disk and harddisk emulator for older computers/operating systems that relies only on BIOS for disk accesses. ISA-8 bit board. "It can let you use it your physical floppy drives or, floppy images on demand, using a tiny screen".
+A Raspberry Pi Pico **floppy disk and harddisk emulator** for older computers/operating systems that relies **only** on BIOS for disk accesses. ISA-8 bit board. "It can let you use it your physical floppy drives or, floppy images on demand, using a tiny screen".
 
 Included: 
   - Kicad ISA-8bit schematic
