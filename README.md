@@ -1,12 +1,12 @@
 # ISA-raspberry-pi-pico-disk-emulator
-A Raspberry Pi Pico **floppy disk and harddisk emulator** for older computers/operating systems that **relies only** on BIOS for disk accesses. Its a ISA-8 bit board. "It can let you use it your physical floppy drives or, floppy images on demand, using a tiny screen".
+A Raspberry Pi Pico **floppy disk and harddisk emulator** for older computers/operating systems that **relies only** on BIOS for disk accesses. Its a ISA-8 bit board. "It can let you use it your physical floppy drives or, floppy images on demand, using a tiny screen and a joystick".
 
 Included: 
   - Kicad ISA-8bit schematic
   - C and ASM code
+  - building scripts (windows only)
   - Amstrad PPC512/640 rear expansion ports diagram (for doing a "box" for this computer, instead of a ISA-slot card)
   - Memory addressing and connection simple diagrams
-  - building scripts (windows only)
 
 Project Description:
    This ISA-8bit board implements new INT13h and INT19h BIOS software interrupts handlers for disk access and bootstrapping at 0xC8000. Theres a mini TFT (ST7735), a Joystick, and a SDCard adapter connected by flat ribbon cables that can be attached to a front-panel. The board supports a FAT16 file system containing directories, floppy disk images, and a raw harddisk image (it must be named "hdd.ima" at the root directory). Using the joystick is possible to enable the harddisk image use, navigate SDCard filesystem, and assign floppy disk images to A: and B: drives at any time; theres also the option to select the physical drive instead of floppy disks. The bootstrap code (int19h) is needed for older computers not supporting booting from hard disks so it will place INT13h passing the drive (0x80) and if the hdd.ima file exists, it will boot just as fine.
