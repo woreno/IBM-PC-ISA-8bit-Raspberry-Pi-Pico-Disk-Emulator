@@ -6,7 +6,7 @@ A Raspberry Pi Pico **floppy disk and harddisk emulator** for older computers/op
   - C and ASM code
   - building scripts (windows only)
   - Amstrad PPC512/640 rear expansion DB37 and DB25 ports diagram 
-      - this project was tested with an Amstrad PPC512/640 hence ribbon cables were used instead of a ISA-8bit edge.
+      - this project was tested with an Amstrad PPC640 hence ribbon cables were used instead of a ISA-8bit edge.
   - Memory addressing and connection simple diagrams
 
 **Project Description**
