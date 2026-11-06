@@ -1,0 +1,10 @@
+.program master_pio
+
+
+
+.wrap_target
+
+	wait 1 irq 0
+	push block
+
+.wrap

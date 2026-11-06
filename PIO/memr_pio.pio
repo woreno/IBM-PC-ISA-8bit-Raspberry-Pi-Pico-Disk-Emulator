@@ -1,0 +1,74 @@
+.program memr_pio
+
+.define GPIO_MEMR	      	6	; PIN_MEM_READ
+
+.wrap_target
+	
+	
+	wait 1 gpio GPIO_MEMR		; esperar que o pino esteja a HI	
+	set  pins, 1				; DEIXAR WAIT=1
+	irq 0						; (1) passar controlo ao C
+	;push block					; (1) passar controlo ao C
+
+	;           ______
+	;   MEMR __/ 
+	;             ____   
+	;   WAIT ____/
+							
+	
+
+	pull block					; (2) esperar que C termine
+	set  pins, 0				; DEIXAR WAIT=0
+	   
+
+	;           _________
+	;   MEMR __/ 
+	;             ____   
+	;   WAIT ____/    \__
+
+	wait 0 gpio GPIO_MEMR		; esperar 
+	push block					; (3) passar controlo ao C
+	
+	
+	;           __________
+	;   MEMR __/          \___
+	;             ____   
+	;   WAIT ____/    \_______ 
+
+
+.wrap 
+
+	
+;;  ;           
+;;  ;   MEMR ____
+;;  ;            
+;;  ;   WAIT ____
+;;  
+;;  wait 1 gpio GPIO_MEMR		; esperar que o pino esteja a HI	
+;;  set  pins, 1				; DEIXAR WAIT=1
+;;  irq 0
+;;  
+;;  ;           ______
+;;  ;   MEMR __/ 
+;;  ;             ____   
+;;  ;   WAIT ____/
+;;  						
+;;  push block					; (1) passar controlo ao C
+;;  
+;;  pull block					; (2) esperar que C termine
+;;  set  pins, 0				; DEIXAR WAIT=0
+;;     
+;;  
+;;  ;           _________
+;;  ;   MEMR __/ 
+;;  ;             ____   
+;;  ;   WAIT ____/    \__
+;;  
+;;  wait 0 gpio GPIO_MEMR		; esperar 
+;;  push block					; (3) passar controlo ao C
+;;  
+;;  
+;;  ;           __________
+;;  ;   MEMR __/          \___
+;;  ;             ____   
+;;  ;   WAIT ____/    \_______ 
