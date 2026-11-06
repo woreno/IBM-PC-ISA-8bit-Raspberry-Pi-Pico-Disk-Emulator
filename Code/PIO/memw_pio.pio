@@ -1,0 +1,38 @@
+.program memw_pio
+
+.define GPIO_MEMW	      	5	; PIN_MEM_WRITE
+
+.wrap_target
+ 
+	
+	wait 1 gpio GPIO_MEMW		; esperar que o pino esteja a MEMW=HI	
+	set  pins, 1				; DEIXAR WAIT=1
+	irq 0						; (1) passar controlo ao C
+	;push block					; (1) passar controlo ao C
+	 
+
+	;           ______
+	;   MEMW __/ 
+	;             ____   
+	;   WAIT ____/
+					
+
+	pull block					; (2) esperar que C termine
+	set  pins, 0				; DEIXAR WAIT=0
+	   
+	   
+	;           _________
+	;   MEMW __/ 
+	;             ____   
+	;   WAIT ____/    \__
+
+	wait 0 gpio GPIO_MEMW		; esperar 
+	push block					; (3) passar controlo ao C
+	
+	;           __________
+	;   MEMW __/          \___
+	;             ____   
+	;   WAIT ____/    \_______ 
+
+
+.wrap 

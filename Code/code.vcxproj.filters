@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="app_strings.h">
+      <Filter>%2a%2a%2aAPP HEADERS</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Development\velociraptor\include\mcu\charmap.h">
+      <Filter>%2a%2a%2aMISC HEADERS</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Development\velociraptor\include\mcu\crc7.h">
+      <Filter>%2a%2a%2aMISC HEADERS</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Development\velociraptor\include\mcu\crc16.h">
+      <Filter>%2a%2a%2aMISC HEADERS</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Development\velociraptor\include\mcu\draw.h">
+      <Filter>%2a%2a%2aMISC HEADERS</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Development\velociraptor\include\mcu\esp.h">
+      <Filter>%2a%2a%2aMISC HEADERS</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Development\velociraptor\include\mcu\fatHeads.h">
+      <Filter>%2a%2a%2aMISC HEADERS</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Development\velociraptor\include\mcu\fs.h">
+      <Filter>%2a%2a%2aMISC HEADERS</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Development\velociraptor\include\mcu\mcu.h">
+      <Filter>%2a%2a%2aMISC HEADERS</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Development\velociraptor\include\mcu\mcu_util.h">
+      <Filter>%2a%2a%2aMISC HEADERS</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Development\velociraptor\include\mcu\rasp_pico.h">
+      <Filter>%2a%2a%2aMISC HEADERS</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Development\velociraptor\include\mcu\sd.h">
+      <Filter>%2a%2a%2aMISC HEADERS</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Development\velociraptor\include\mcu\sd_debug.h">
+      <Filter>%2a%2a%2aMISC HEADERS</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Development\velociraptor\include\mcu\shapes.h">
+      <Filter>%2a%2a%2aMISC HEADERS</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Development\velociraptor\include\mcu\st7735.h">
+      <Filter>%2a%2a%2aMISC HEADERS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\raspberry_hid\esp_config.h">
+      <Filter>%2a%2a%2aAPP HEADERS</Filter>
+    </ClInclude>
+    <ClInclude Include="uiIcons.h">
+      <Filter>%2a%2a%2aAPP HEADERS\draw</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Development\velociraptor\include\mcu\uiHeads.h">
+      <Filter>%2a%2a%2aMISC HEADERS</Filter>
+    </ClInclude>
+    <ClInclude Include="uiIconsData.hpp">
+      <Filter>%2a%2a%2aAPP HEADERS\draw</Filter>
+    </ClInclude>
+    <ClInclude Include="app_config.h">
+      <Filter>%2a%2a%2aAPP HEADERS</Filter>
+    </ClInclude>
+    <ClInclude Include="disk_array.h">
+      <Filter>8086-CPU\data</Filter>
+    </ClInclude>
+    <ClInclude Include="app_core_0.h">
+      <Filter>RASP CORES</Filter>
+    </ClInclude>
+    <ClInclude Include="INT13h_HANDLER.h">
+      <Filter>RASP CORES</Filter>
+    </ClInclude>
+    <ClInclude Include="UI.h">
+      <Filter>RASP CORES</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="draft.cpp">
+      <Filter>%2a%2a%2aAPP HEADERS</Filter>
+    </ClCompile>
+    <ClCompile Include="MAIN.CPP">
+      <Filter>RASP CORES</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="compile.bat">
+      <Filter>%2a%2a%2aCOMPILE</Filter>
+    </None>
+    <None Include="icons.bmp">
+      <Filter>%2a%2a%2aAPP HEADERS\draw</Filter>
+    </None>
+    <None Include="drafts.txt">
+      <Filter>pio</Filter>
+    </None>
+    <None Include="ASM\DISK.ASM">
+      <Filter>8086-CPU\asm</Filter>
+    </None>
+    <None Include="ASM\DISKBLKS.INC">
+      <Filter>8086-CPU\asm</Filter>
+    </None>
+    <None Include="ASM\INT13h.INC">
+      <Filter>8086-CPU\asm</Filter>
+    </None>
+    <None Include="ASM\INT19h.INC">
+      <Filter>8086-CPU\asm</Filter>
+    </None>
+    <None Include="ASM\UTIL.INC">
+      <Filter>8086-CPU\asm\util</Filter>
+    </None>
+    <None Include="ASM\TTY.INC">
+      <Filter>8086-CPU\asm\util</Filter>
+    </None>
+    <None Include="ASM\TEST.INC">
+      <Filter>8086-CPU\asm\util</Filter>
+    </None>
+    <None Include="ASM\MACROS.INC">
+      <Filter>8086-CPU\asm\util</Filter>
+    </None>
+    <None Include="ASM\DBT.inc">
+      <Filter>8086-CPU\asm\util</Filter>
+    </None>
+    <None Include="PIO\master_pio.pio">
+      <Filter>pio</Filter>
+    </None>
+    <None Include="PIO\memr_pio.pio">
+      <Filter>pio</Filter>
+    </None>
+    <None Include="PIO\memw_pio.pio">
+      <Filter>pio</Filter>
+    </None>
+    <None Include="ATF\write_gal.bat">
+      <Filter>%2a%2a%2aCOMPILE\ATF</Filter>
+    </None>
+    <None Include="pico_sdk_import.cmake">
+      <Filter>%2a%2a%2aCOMPILE\PICO</Filter>
+    </None>
+    <None Include="CMAKELISTS.txt">
+      <Filter>%2a%2a%2aCOMPILE\PICO</Filter>
+    </None>
+    <None Include="dosbox.config">
+      <Filter>%2a%2a%2aCOMPILE\DOSBOX</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="%2a%2a%2aMISC HEADERS">
+      <UniqueIdentifier>{538dc8e4-f58d-4120-ba5e-b64c7e75b2bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RASP CORES">
+      <UniqueIdentifier>{72d390f1-30c2-47ba-93ca-f90801ab2e77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="%2a%2a%2aAPP HEADERS">
+      <UniqueIdentifier>{d1042636-71ba-4c0b-b4d1-54e7e0feabbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="%2a%2a%2aAPP HEADERS\draw">
+      <UniqueIdentifier>{c08d496d-cbfd-44e9-b52b-dd7d5ad47182}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="8086-CPU">
+      <UniqueIdentifier>{30d96761-ace3-4139-8113-9a1134569d1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="8086-CPU\asm">
+      <UniqueIdentifier>{a858d9aa-8b49-4544-b88f-66a1f6d54a38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="8086-CPU\asm\util">
+      <UniqueIdentifier>{c33e7268-f873-4ba6-a874-229ff0da04ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="8086-CPU\data">
+      <UniqueIdentifier>{69d16bda-5ff3-499b-9309-221129bc6873}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pio">
+      <UniqueIdentifier>{315b24bb-1548-4e6c-991d-7b443adda3cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="%2a%2a%2aCOMPILE">
+      <UniqueIdentifier>{5cae2245-ec51-4d0c-b75b-e61d17035fec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="%2a%2a%2aCOMPILE\PICO">
+      <UniqueIdentifier>{cd58889a-d4da-4841-8bda-51f1a287d6e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="%2a%2a%2aCOMPILE\ATF">
+      <UniqueIdentifier>{48c67cca-b6ca-41f1-be63-d69a427328aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="%2a%2a%2aCOMPILE\DOSBOX">
+      <UniqueIdentifier>{01978e02-0257-47ae-9df3-498b4bf1099c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
