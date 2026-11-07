@@ -6,9 +6,9 @@
 //#define DEBUG_INT13h_BUFFERS
 
 namespace CPU8086_shared_flags {
-	// a primeira FLAG em DISK_FLAGS È o opcode 0xEA :
+	// a primeira FLAG em DISK_FLAGS √© o opcode 0xEA :
 	#define DISK_FLAG_JUMP_CODE				((W8*)(DISK_FLAGS))
-	// 2 bytes cada (n„o escrever! n„o est„o alinhadas):
+	// 2 bytes cada (n√£o escrever! n√£o est√£o alinhadas):
 	#define DISK_FLAG_INT13h_ORIGINAL_IP	((W16*)(DISK_FLAGS+1))
 	#define DISK_FLAG_INT13h_ORIGINAL_SEG	((W16*)(DISK_FLAGS+3))
 	#define DISK_FLAG_INT19h_ORIGINAL_IP	((W16*)(DISK_FLAGS+5))
@@ -77,7 +77,7 @@ namespace CPU8086_regs_access {
 
 };
 //////////////////////////////////////////////////////////////////////////////////////////
-// EnumeraÁ„o das funÁıes da INT13h
+// Enumera√ß√£o das fun√ß√µes da INT13h
 //////////////////////////////////////////////////////////////////////////////////////////
 
 enum INT13h_FX
@@ -149,7 +149,7 @@ SW8* INT13h_FXStrs[] = {
 };
 
 //////////////////////////////////////////////////////////////////////////////////////////
-// Disk Base Table, ponteiro dado pela funÁ„o 08 (GET PARAMS) da Int13h
+// Disk Base Table, ponteiro dado pela fun√ß√£o 08 (GET PARAMS) da Int13h
 //////////////////////////////////////////////////////////////////////////////////////////
 
 VL_PACK_BEGIN
@@ -238,7 +238,7 @@ BIOS_DBT* dbts	=  (BIOS_DBT*) (DISK_FLAGS + DISK_FLAG_DBT_OFFSET);
 //BIOS_FDPT* fdpt =  (BIOS_FDPT*) (DISK_FLAGS + DISK_FLAG_FDPT_OFFSET);
 
 //////////////////////////////////////////////////////////////////////////////////////////
-// RepresentaÁ„o das 3 unidades (2 disquetes, 1 HDD)
+// Representa√ß√£o das 3 unidades (2 disquetes, 1 HDD)
 //////////////////////////////////////////////////////////////////////////////////////////
 
 class Drive
@@ -592,7 +592,7 @@ W0  int13h_16h_disk_change()
 	if (d_driveId<2)
 	{
 		//printf("\nLINE CHANGE? %i", d_drive->changed?1:0);
-		SET_AH(d_drive->changed?1:0)	// mudanÁa de disquete
+		SET_AH(d_drive->changed?1:0)	// mudan√ßa de disquete
 	}
 	else
 	{
@@ -646,7 +646,7 @@ W0  int13h_handler()
 	#endif
 
 	// opcional	-- optional
-	ui_set_drive_operation_icons(d_driveId, d_function);3
+	ui_set_drive_operation_icons(d_driveId, d_function);
 	//
 	
 	bios_decode_cylinder_sectorspertrack(GET_CX(), d_cylinder, d_sector);
