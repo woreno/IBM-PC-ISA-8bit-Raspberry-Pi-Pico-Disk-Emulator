@@ -22,7 +22,7 @@ Also the Raspberry Pi Pico C/PIO code is experimental - it just works fine with 
     to activate these lines before placing calls
   * Uses 1 GAL Atmel ATF16v8B for decoding the address 0xC8000 using the A15:A19 lines, along the
     memory read and memory write signals (/MEMR, /MEMW)
-  * It pulls down the signal IOREADY using a 2N3904 transistor to it can finish the requests
+  * It pulls down the signal IOREADY using a 2N3904 transistor to it can finish the memory access requests
   * Uses a 2-axis joystick which swings 2 lines between -5V to 5V according to the side (left/right, up/down); these
     lines are connected to 2 ADC channels on the Raspberry Pi Pico
   * Uses 1 74HCT04 for inverting ENABLE_SD and /ENABLE_LOW_ADDR for multiplexing lines, using the 244 buffers.
