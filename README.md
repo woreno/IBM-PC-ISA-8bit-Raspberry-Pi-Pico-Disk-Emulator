@@ -55,8 +55,9 @@ Also the Raspberry Pi Pico C/PIO code is experimental - it just works fine with 
 **Software side - 8086 PC Option ROM**
   * The ROM in written in ASM and compiled in Turbo Assembler in a DOSBOX enviroment.
   * After the 8086 code is compiled and linked with TASM, a utility strips the MZ-header, sums all bytes and writes the remain to 0, and place this remain into the compiled code, in a reserved, 1-byte, place. After, the utility resizes this image to accomodate the buffer, and shared-variables area, and converts it to a C hexadecimal array. This array is included into Raspberry Pi Pico C++ program and has some C identifiers pointing to it. This array is served as the beggining of 0xC8000: boot code, INT13h, INT19h handlers, a buffer reserved for transfering data used by INT13h, a shared-flag-area, and the DBTs (disk base table). The DBTs are BIOS structures are served when INT13h, function 8 (get params) and need to be dinamically changed accordantly the floppy disk image selected (ie, 720KB or 1440KB).
+    
 
-**Software side - ATF16v8b pins logical functions **
+**Software side - ATF16v8b pins logical functions**
   * This code specifies as outputs the MEMR and MEMW pins, these two outputs go to the Raspbery Pi Pico; as inputs the A15:19 address bus lines, /MEMR, /MEMW bus signals. When the A15:19 is 11001, and /MEMR=0 or /MEMW=0 it activates as HIGH the MEMR or MEMW output pins, thus decoding the 0xC8XXX address on memory accesses.  
   
 
