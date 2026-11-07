@@ -3,7 +3,7 @@ A Raspberry Pi Pico **floppy disk and harddisk emulator** for older computers/op
 
 **Included** 
   - Kicad ISA-8bit prototype schematic
-    - this sketch has wide-traces because i use to transfer PCB designs using photo-paper + iron and etch them with ferric chloride (so this process sometimes fails with thin traces)  
+    - this sketch has wide-traces because i use to transfer PCB designs using photo-paper + iron and etch them with ferric chloride (so this process sometimes fails with thin traces, so i use wider traces)  
   - C and ASM code
   - building scripts (windows only)
   - Amstrad PPC512/640 rear expansion DB37 and DB25 ports diagram 
