@@ -2,7 +2,8 @@
 A Raspberry Pi Pico **floppy disk and harddisk emulator** for older computers/operating systems that **relies only** on BIOS for disk accesses. Its a ISA-8 bit board. "It can let you use it your physical floppy drives or, floppy images on demand, using a tiny screen and a joystick". As this is a DIY electronics and software project, use this at your own risk.
 
 **Included** 
-  - Kicad ISA-8bit schematic
+  - Kicad ISA-8bit prototype schematic
+    - this is a bit sketchy with wide-traces because i use to transfer PCB designs using photo-paper + iron and etch them with ferric chloride (so sometimes fails with thin traces)  
   - C and ASM code
   - building scripts (windows only)
   - Amstrad PPC512/640 rear expansion DB37 and DB25 ports diagram 
