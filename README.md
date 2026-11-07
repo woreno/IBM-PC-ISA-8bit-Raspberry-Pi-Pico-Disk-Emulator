@@ -45,7 +45,7 @@ Also the Raspberry Pi Pico C/PIO code is experimental - it just works fine with 
   * The SDCard access is done with my own library - it reads/writes 512blocks - incomplete code alert: OLDER SD CARDS might not work. 
 
 **Software side - Raspberry Pi Pico - Core 1 - User interface**
-  * The ST7735 TFT screen library its my own. The initialization code was borrowed from https://github.com/afiskon/stm32-st7735/ . This screen seems to demand a RESET line, i don't use it and i connect both RESET and BACKLIGHT lines to a pullup. If found if the initialization code is sent at lower speed the screen will work at faster speed without requiring a RESET signal several toogling at the initialization. This saved me a GPIO.
+  * The ST7735 TFT screen library its my own. The initialization code was borrowed from https://github.com/afiskon/stm32-st7735/ . This screen seems to demand a RESET line, i don't use it and i connect both RESET and BACKLIGHT lines to a pullup. I found if the initialization code is sent at lower speed, later commands can run at faster speed without requiring a RESET signal several toogling at the initialization. This saved me a 1 GPIO.
   * My own draw library abstracts calls to the screen primitive functions (drawing pixels, rectangles) with preprocessor DEFINEs.
   * My own user-interface library have base classes to create lists and options, and derived classes to create lists from a source, like a TextFileSource or FSSource to render a menu to navigate the master-boot-records and filesystems. 
 
