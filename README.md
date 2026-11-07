@@ -22,19 +22,19 @@ Also the Raspberry Pi Pico C/PIO code is experimental - it just works fine with 
     to activate these lines before placing calls
   * Uses 1 GAL Atmel ATF16v8B for decoding the address 0xC8000 using the A15:A19 lines, along the
     memory read and memory write signals (/MEMR, /MEMW)
-  * It pulls down the signal IOREADY using a 2N3904 transistor to it can finish the memory access requests
+  * It pulls down the signal IOREADY using a 2N3904 transistor so it can finish the memory access requests
   * Uses a 2-axis joystick which swings 2 lines between -5V to 5V according to the side (left/right, up/down); these
     lines are connected to 2 ADC channels on the Raspberry Pi Pico
-  * Uses 1 74HCT04 for inverting ENABLE_SD and /ENABLE_LOW_ADDR signals for multiplexing some lines, using the 244 buffers.
+  * Uses 1 74HCT04 for inverting ENABLE_SD and /ENABLE_LOW_ADDR signals for multiplexing some lines, using the 244 buffers
   * Uses some voltage dividers with resistors for 5V to 3.3V level conversion next to some Raspberry Pi Pico GPIO 
   * Uses a bidirectional bus converter TXS0108E, from/to 3.3V to 5V, for the databus interface, operated with a Output Enable Signal to block them from the main 8086 PC databus
 
 **Software side - Raspberry Pi Pico - Core 0**
-  * This CPU is on loop waiting for data from one master PIO program (master_pio). This master_pio is waiting for memr_pio or memw_pio PIO programs for producing and IRQ0.  
+  * This CPU core is on loop waiting for data from one master PIO program (master_pio). This master_pio is waiting for memr_pio or memw_pio PIO programs for producing and IRQ0.  
   * These previous 2 PIO programs (they are equal, just differ in the line use MEMR or MEMW): the PIO program keeps waiting for these signals to be HIGH - they come HIGH from the ATF16v8b when the 0xC8XXX is on the address bus as well one of /MEMR or /MEMW are LOW; after, the PIO Program immediately puts the IOWAIT line to HIGH, and a transistor connected to it, will pull down the IOREADY line to indicate the 8086 that needs more time. After, the master PIO program transfers control to the C program which reads all the address lines (enabling and disabling /EN_ADDR_LOW); reads which MEMR/W line is HIGH accordantly reads or writes the local C-Array, as well controling the databus converter signal DB_ENABLE_OE. At the end, the IOWAIT is lowered, and in case of a writing, the databus is let active for more a period for settling.
   
 **Software side - Raspberry Pi Pico - Core 1**
-* This CPU is always on a loop:
+* This CPU core is always on a loop:
     1) pooling the shared area variable "START_OPERATION" flag
     2) pooling the joystick values
     3) updating the graphical interface in the TFT in case of joystick movement
