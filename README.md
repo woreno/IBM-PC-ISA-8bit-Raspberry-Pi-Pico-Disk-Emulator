@@ -25,9 +25,9 @@ Also the Raspberry Pi Pico C/PIO code is experimental - it just works fine with 
   * It pulls down the signal IOREADY using a 2N3904 transistor to it can finish the memory access requests
   * Uses a 2-axis joystick which swings 2 lines between -5V to 5V according to the side (left/right, up/down); these
     lines are connected to 2 ADC channels on the Raspberry Pi Pico
-  * Uses 1 74HCT04 for inverting ENABLE_SD and /ENABLE_LOW_ADDR for multiplexing lines, using the 244 buffers.
-  * Uses some voltage dividers with resistors for 5V to 3.3V level conversion at the Raspberry Pi Pico
-  * Uses a bidirectional bus converter TXS0108E, for the databus to level databus signals from/to 3.3V to 5V, operated with a Output Enable Signal to block them from the main 8086 PC databus
+  * Uses 1 74HCT04 for inverting ENABLE_SD and /ENABLE_LOW_ADDR signals for multiplexing some lines, using the 244 buffers.
+  * Uses some voltage dividers with resistors for 5V to 3.3V level conversion next to some Raspberry Pi Pico GPIO 
+  * Uses a bidirectional bus converter TXS0108E, from/to 3.3V to 5V, for the databus interface, operated with a Output Enable Signal to block them from the main 8086 PC databus
 
 **Software side - Raspberry Pi Pico - Core 0**
   * This CPU is on loop waiting for data from one master PIO program (master_pio). This master_pio is waiting for memr_pio or memw_pio PIO programs for producing and IRQ0.  
