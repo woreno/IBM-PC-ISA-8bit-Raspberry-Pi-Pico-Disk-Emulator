@@ -1,0 +1,129 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP 74AHC244
+D 8-bit Buffer/Line Driver 3-state
+K AHCMOS BUFFER 3State
+F https://assets.nexperia.com/documents/data-sheet/74AHC_AHCT244.pdf
+$ENDCMP
+#
+$CMP 74AHCT244
+D 8-bit Buffer/Line Driver 3-state
+K AHCTMOS BUFFER 3State
+F https://assets.nexperia.com/documents/data-sheet/74AHC_AHCT244.pdf
+$ENDCMP
+#
+$CMP 74HC165
+D Shift Register, 8-bit, Parallel Load
+K 8 bit shift register parallel load cmos
+F https://assets.nexperia.com/documents/data-sheet/74HC_HCT165.pdf
+$ENDCMP
+#
+$CMP 74HC244_(mesma_ordem)
+D 8-bit Buffer/Line Driver 3-state
+K HCMOS BUFFER 3State
+F https://assets.nexperia.com/documents/data-sheet/74HC_HCT244.pdf
+$ENDCMP
+#
+$CMP 74HCT244
+D 8-bit Buffer/Line Driver 3-state
+K HCTMOS BUFFER 3State
+F https://assets.nexperia.com/documents/data-sheet/74HC_HCT244.pdf
+$ENDCMP
+#
+$CMP 74LS151
+D Multiplexer 8 to 1
+K TTL MUX8
+F http://www.ti.com/lit/gpn/sn74LS151
+$ENDCMP
+#
+$CMP 74LS155_(2)
+D Dual 2 to 4 lines Decoder/Demultiplexer
+K TTL DECOD8 DECOD4 DEMUX4 DEMUX8 DEMUX DECOD
+F http://www.ti.com/lit/gpn/sn74LS155
+$ENDCMP
+#
+$CMP 74LS156
+D Dual 2 to 4 lines Decoder/Demultiplexer, Open Collector
+K TTL DECOD8 DECOD4 DEMUX4 DEMUX8 OpenCol
+F http://www.ti.com/lit/gpn/sn74LS156
+$ENDCMP
+#
+$CMP 74LS160
+D Synchronous 4-bit programmable decimal Counter
+K TTL CNT CNT4
+F http://www.ti.com/lit/gpn/sn74LS160
+$ENDCMP
+#
+$CMP 74LS161
+D Synchronous 4-bit programmable binary Counter
+K TTL CNT CNT4
+F http://www.ti.com/lit/gpn/sn74LS161
+$ENDCMP
+#
+$CMP 74LS162
+D Synchronous 4-bit programmable decimal Counter
+K TTL CNT CNT4
+F http://www.ti.com/lit/gpn/sn74LS162
+$ENDCMP
+#
+$CMP 74LS163
+D Synchronous 4-bit programmable binary Counter
+K TTL CNT CNT4
+F http://www.ti.com/lit/gpn/sn74LS163
+$ENDCMP
+#
+$CMP 74LS164
+D Shift Register 8-bit, parallel load
+K TTL SR SR8
+F https://www.ti.com/lit/ds/symlink/sn74ls165a.pdf
+$ENDCMP
+#
+$CMP 74LS194
+D Shift Register 4-bit Bidirectional
+K TTL RS SR4
+F http://www.ti.com/lit/gpn/sn74LS194
+$ENDCMP
+#
+$CMP 74LS257_RD
+D Quad 2 to 1 Multiplexer
+K TTL MUX MUX2
+F http://www.ti.com/lit/gpn/sn74LS257
+$ENDCMP
+#
+$CMP 74LS257_RD_2PARTS
+D Quad 2 to 1 Multiplexer
+K TTL MUX MUX2
+F http://www.ti.com/lit/gpn/sn74LS257
+$ENDCMP
+#
+$CMP 74_153
+D Dual Multiplexer 4 to 1
+K TTL Mux4
+F http://www.ti.com/lit/gpn/sn74LS153
+$ENDCMP
+#
+$CMP SCART
+D Prise Peritel
+K connector
+F  ~
+$ENDCMP
+#
+$CMP jumper_2_pairs
+D Jumper, normally closed
+K jumper bridge link NC
+F ~
+$ENDCMP
+#
+$CMP jumper_4_pairs
+D Jumper, normally closed
+K jumper bridge link NC
+F ~
+$ENDCMP
+#
+$CMP jumper_8
+D Jumper, normally closed
+K jumper bridge link NC
+F ~
+$ENDCMP
+#
+#End Doc Library
