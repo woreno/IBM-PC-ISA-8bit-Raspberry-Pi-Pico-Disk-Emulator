@@ -47,14 +47,17 @@ Also the Raspberry Pi Pico C/PIO code is experimental - it just works fine with 
 **Software side - Raspberry Pi Pico - Core 1 - User interface**
   * The ST7735 TFT screen library its my own. The initialization code was borrowed from https://github.com/afiskon/stm32-st7735/ . This screen seems to demand a RESET line, i don't use it and i connect both RESET and BACKLIGHT lines to a pullup. I found if the initialization code is sent at lower speed, later commands can run at faster speed without requiring a RESET signal several toogling at the initialization. This saved me a 1 GPIO.
   * My own draw library abstracts calls to the screen primitive functions (drawing pixels, rectangles) with preprocessor DEFINEs.
-  * My own user-interface library have base classes to create lists and options, and derived classes to create lists from a source, like a TextFileSource or FSSource to render a menu to navigate the master-boot-records and filesystems. 
+  * My own user-interface library have base and derived classes to create lists with options, also specifing a source class. These later are like adapter classes that enable to create lists from a source, like a text file or a filesystem, in example to render a menu to navigate the master-boot-records and filesystems within. 
 
 **Software side - 8086 PC Option ROM aspects**
-  * The 8086 PC BIOS scans the upper memory addresses for option ROMs. These ROMs must include at their first bytes 0xAA55 (2 bytes), the total of 512-bytes blocks(1 byte) and all their bytes shall have a 8-bit sum equal to zero.
+  * The 8086 PC BIOS scans the upper memory addresses for option ROMs. These ROMs must include at their first bytes 0xAA55 (2 bytes), the total in 512-bytes blocks(1 byte), and all their bytes shall sum to zero (8-bit sum).
   
 **Software side - 8086 PC Option ROM**
   * The ROM in written in ASM and compiled in Turbo Assembler in a DOSBOX enviroment.
-  * After the 8086 code is compiled and linked with TASM, a utility strips the MZ-header, sums all bytes and writes the remain to 0, and place this remain in a reserved place. After, the utility converts the code to an C hexadecimal array, and this one is included into Raspberry Pi Pico C++ program. This array is served as the beggining of 0xC8000: boot code, INT13h, INT19h handlers, a buffer reserved for transfering data used by INT13h, a shared-flag-area, and the DBTs (disk base table). The DBTs are BIOS structures used by INT13h, function 8 (get params) and need to be dinamically changed accordantly the floppy disk image selected (ie, 720KB or 1440KB).
+  * After the 8086 code is compiled and linked with TASM, a utility strips the MZ-header, sums all bytes and writes the remain to 0, and place this remain into the compiled code, in a reserved, 1-byte, place. After, the utility resizes this image to accomodate the buffer, and shared-variables area, and converts it to a C hexadecimal array. This array is included into Raspberry Pi Pico C++ program and has some C identifiers pointing to it. This array is served as the beggining of 0xC8000: boot code, INT13h, INT19h handlers, a buffer reserved for transfering data used by INT13h, a shared-flag-area, and the DBTs (disk base table). The DBTs are BIOS structures are served when INT13h, function 8 (get params) and need to be dinamically changed accordantly the floppy disk image selected (ie, 720KB or 1440KB).
+
+**Software side - ATF16v8b pins logical functions **
+  * This code specifies as outputs the MEMR and MEMW pins, these two outputs go to the Raspbery Pi Pico; as inputs the A15:19 address bus lines, /MEMR, /MEMW bus signals. When the A15:19 is 11001, and /MEMR=0 or /MEMW=0 it activates as HIGH the MEMR or MEMW output pins, thus decoding the 0xC8XXX address on memory accesses.  
   
 
 
